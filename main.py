@@ -1,8 +1,9 @@
-from funcionalidad_1 import generate_random, add_queue, create_tree_photos
+from funcionalidad_1 import generate_random, add_queue, create_tree_photos, call
 from My_queue import *
 from My_tree import *
 from menu import show_header, show_exit, show_options, show_invalid_input, show_project
 import sys
+import time
 import os
 
 
@@ -17,13 +18,15 @@ def main():
         option = show_options()
         list_photos = generate_random()
         if (option == 1):
-            if queue_photo and tree_photos:
-                queue_photo = add_queue(list_photos, queue_photo)
-                tree_photos = create_tree_photos(queue_photo, tree_photos)
+            start_time = time.time()
 
+            if queue_photo and tree_photos:
+                photos = call(list_photos, queue_photo, tree_photos)
             else:
-                queue_photo = add_queue(list_photos)
-                tree_photos = create_tree_photos(queue_photo)
+                photos = call(list_photos)
+
+            end_time = time.time()
+            print(end_time - start_time)
 
         elif (option == 2):
             show_project()

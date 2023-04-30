@@ -32,7 +32,7 @@ def create_tree_photos(queue, tree_photo=None) -> None:
     return tree_photo
 
 
-def generate_random(bot: int = 0, top: int = 1000, amount: int = 200000) -> list:
+def generate_random(bot: int = 0, top: int = 1000, amount: int = 20000) -> list:
     list_photos = []
     for _ in range(amount):
         list_photos.append(random.randint(bot, top))
@@ -49,6 +49,42 @@ def call(list_photos, queue_photo=None, tree_photos=None):
         queue_photo = add_queue(list_photos)
         tree_photos = create_tree_photos(queue_photo)
     return tree_photos
+
+# -----Alternartive 1.2---------------------------
+
+
+def add_list(list_photos, list_create=None):
+    if list_create == None:
+        list_create = dinamic_arraylist()
+
+    for i in list_photos:
+        list_create.pushback(i)
+
+    return list_create
+
+
+def create_photos(import_photo, list_create=None):
+    if list_create == None:
+        list_create = dinamic_arraylist()
+
+    while import_photo.contador > 0:
+        list_create.pushback(import_photo.popback())
+
+    return list_create
+
+
+def call_list(list_photo, import_photo=None, load_photo=None):
+    if import_photo and load_photo:
+        import_photo = add_list(list_photo, import_photo)
+        load_photo = create_photos(import_photo, load_photo)
+
+    else:
+        import_photo = add_list(list_photo)
+        load_photo = create_photos(import_photo)
+
+    return load_photo
+
+    # -------------------------------
 
 
 def add_favorites(incial: True, favorites):

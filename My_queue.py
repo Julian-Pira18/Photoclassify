@@ -33,6 +33,7 @@ class Queue:
             else:
                 self.first = None
                 self.last = None
+
             return data
 
     def peek(self):
@@ -40,16 +41,3 @@ class Queue:
             print(self.first.data)
         else:
             return None
-
-
-my_Queue = Queue()
-my_Queue.enqueue(4)
-my_Queue.enqueue(5)
-my_Queue.enqueue(9)
-my_Queue.enqueue(3)
-my_Queue.enqueue(8)
-my_Queue.dequeue()
-my_Queue.dequeue()
-my_Queue.dequeue()
-my_Queue.peek()
-print(my_Queue.size)

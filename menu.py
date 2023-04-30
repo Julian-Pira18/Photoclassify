@@ -56,12 +56,11 @@ def show_project():
     text = """
     Name: PhotoClassif
 
-    Boss: Julian Pira 
-
-    Slaves:
-        Daniel 
-        Handerson
-        Camilo
+    Participants:
+                Julian Pira 
+                Daniel Garcia
+                Anderson Barrera 
+                Camilo 
     
     Ing. Systems and Computing
     National university of Colombia

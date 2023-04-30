@@ -1,6 +1,3 @@
-
-# falta reconstruir los nodos del arbol sin hacer herencia de calses
-
 class Node_Tree():
     def __init__(self, data):
         self.data = data

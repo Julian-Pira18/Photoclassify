@@ -9,14 +9,21 @@ import os
 def main():
     # photos_Load = "C:\Users\piraj\proyecto_estructuras\assets"
     list_photos = generate_random()
-
+    queue_photo = 0
+    tree_photos = 0
     show_header()
 
     while True:
         option = show_options()
-
+        list_photos = generate_random()
         if (option == 1):
-            pass
+            if queue_photo and tree_photos:
+                queue_photo = add_queue(list_photos, queue_photo)
+                tree_photos = create_tree_photos(queue_photo, tree_photos)
+
+            else:
+                queue_photo = add_queue(list_photos)
+                tree_photos = create_tree_photos(queue_photo)
 
         elif (option == 2):
             show_project()
@@ -30,9 +37,6 @@ def main():
 
         else:
             show_invalid_input()
-
-        # queue_photo = add_queue(list_photos)
-        # tree_photos = create_tree_photos(queue_photo)
 
 
 if __name__ == "__main__":

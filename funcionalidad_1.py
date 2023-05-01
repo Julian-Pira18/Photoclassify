@@ -51,11 +51,10 @@ def call(list_photos, queue_photo=None, tree_photos=None):
     return tree_photos
 
 
-def add_favorites(incial: True, favorites):
+def add_favorites(data, favorites=None, incial=True,):
     if incial == False:
         favorites = Queue()
-    else:
-        favorites.enqueue()
+    favorites.enqueue(data)
 
 
 # usar la cola para clasificar

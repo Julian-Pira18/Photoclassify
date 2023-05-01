@@ -1,4 +1,4 @@
-from funcionalidad_1 import generate_random, add_queue, create_tree_photos, call
+from funcionalidad_1 import generate_random, add_queue, create_tree_photos, call, add_favorites
 from My_queue import *
 from My_tree import *
 from menu import show_header, show_exit, show_options, show_invalid_input, show_project
@@ -6,12 +6,15 @@ import sys
 import time
 import os
 
+#
+
 
 def main():
     # photos_Load = "C:\Users\piraj\proyecto_estructuras\assets"
     list_photos = generate_random()
     queue_photo = 0
     tree_photos = 0
+    favorite = 0
     show_header()
 
     while True:
@@ -37,6 +40,12 @@ def main():
                 sys.exit(0)
             except SystemError:
                 os._exit(0)
+
+        # Agregacion de fotos favoritas
+        elif (option == 4):
+            data = input("")
+            if favorite == None:
+                favorite = add_favorites(data, tree_photos, False)
 
         else:
             show_invalid_input()

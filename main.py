@@ -6,8 +6,6 @@ import sys
 import time
 import os
 
-#
-
 
 def main():
     # photos_Load = "C:\Users\piraj\proyecto_estructuras\assets"
@@ -30,6 +28,7 @@ def main():
 
             end_time = time.time()
             print(end_time - start_time)
+            print(photos.root.data.show())
 
         elif (option == 2):
             show_project()
@@ -46,7 +45,6 @@ def main():
             data = input("")
             if favorite == None:
                 favorite = add_favorites(data, tree_photos, False)
-
         else:
             show_invalid_input()
 

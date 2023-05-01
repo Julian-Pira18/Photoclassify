@@ -18,10 +18,10 @@ class Tree:
             return
 
         while True:
-            if ref.data == node.data:
+            if ref.data.data == node.data.data:
                 break
 
-            elif ref.data > node.data:
+            elif ref.data.data > node.data.data:
                 if ref.left:
                     ref = ref.left
 

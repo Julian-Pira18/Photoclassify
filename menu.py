@@ -60,7 +60,7 @@ def show_project():
                 Julian Pira 
                 Daniel Garcia
                 Anderson Barrera 
-                Camilo 
+                Camilo Rodriguez
     
     Ing. Systems and Computing
     National university of Colombia

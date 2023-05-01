@@ -3,7 +3,7 @@ from My_queue import Queue, Node
 import random
 from My_tree import *
 from list_dinamic import *
-
+from linkedlist_tail import *
 
 # ---------------------------------
 
@@ -84,7 +84,41 @@ def call_list(list_photo, import_photo=None, load_photo=None):
 
     return load_photo
 
-    # -------------------------------
+# --------------------------------------------------------------
+
+# -----------------Alternative 1.3
+
+
+def add_linkedlist(list_photo, listcreate=None):
+    if listcreate == None:
+        listcreate = Double_linked_list()
+
+    for i in list_photo:
+        listcreate.pushback(i)
+    return listcreate
+
+
+def create_linked(import_photos, create_photos=None):
+    if create_photos == None:
+        create_photos = Double_linked_list()
+
+    while import_photos.size > 0:
+        create_photos.pushback(import_photos.popback())
+
+    return create_photos
+
+
+def call_linked(list_photo, import_photo=None, load_photo=None):
+    if import_photo and load_photo:
+        import_photo = add_linkedlist(list_photo, import_photo)
+        load_photo = create_linked(import_photo, load_photo)
+
+    else:
+        import_photo = add_linkedlist(list_photo)
+        load_photo = create_linked(import_photo)
+
+
+#  --------------------------------------------------------------
 
 
 def add_favorites(incial: True, favorites):

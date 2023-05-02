@@ -50,9 +50,7 @@ def main():
 
         #  Mostarar favoritos
         elif (option == 5):
-
             show_favorites(favorite)
-
         else:
             show_invalid_input()
 

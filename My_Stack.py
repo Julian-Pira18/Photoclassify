@@ -53,3 +53,11 @@ class Stack:
             while ref:
                 print(ref.data, end=" ")
                 ref = ref.next
+
+    def search(self, number, update=None):
+
+        ref = self.top
+        while True:
+            if ref.data.data == number:
+                break
+            ref = ref.next

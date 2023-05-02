@@ -1,3 +1,6 @@
+from My_queue import *
+
+
 class Node_Tree():
     def __init__(self, data):
         self.data = data
@@ -37,17 +40,49 @@ class Tree:
                     ref.rigth = node
                     break
 
+    def show(self, number=None):
+        ref = self.root
+        if ref is None:
+            return
+
+        queue = Queue()
+        queue.enqueue(ref)
+
+        if number == None:
+            while queue:
+                if queue.first == None:
+                    break
+                node = queue.dequeue()
+                print(node.data.data, end=" ")
+
+                if node.left:
+                    queue.enqueue(node.left)
+                if node.rigth:
+                    queue.enqueue(node.rigth)
+        else:
+            for _ in range(number):
+                if queue.first == None:
+                    break
+                node = queue.dequeue()
+                print(node.data.data, end=" ")
+
+                if node.left:
+                    queue.enqueue(node.left)
+                if node.rigth:
+                    queue.enqueue(node.rigth)
+
     def search(self, data):
         ref = self.root
 
         while ref:
-            if ref.data == data:
-                print(f"ref= {ref.data}  data={data}")
+            if ref.data.data == data:
+                print(ref.data.data)
                 return True
 
-            elif ref.data > data:
+            elif ref.data.data > data:
                 ref = ref.left
 
             else:
                 ref = ref.rigth
+
         return False

@@ -42,3 +42,14 @@ class Stack:
             return self.top.data
         else:
             return None
+
+    def show(self, number=None):
+        ref = self.top
+        if number:
+            for _ in range(number):
+                print(ref.data, end=" ")
+                ref = ref.next
+        else:
+            while ref:
+                print(ref.data, end=" ")
+                ref = ref.next

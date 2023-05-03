@@ -71,12 +71,12 @@ class Tree:
                 if node.rigth:
                     queue.enqueue(node.rigth)
 
-    def search(self, data):
+    def search(self, data, update):
         ref = self.root
 
         while ref:
             if ref.data.data == data:
-                print(ref.data.data)
+                ref.data.data = update
                 return True
 
             elif ref.data.data > data:

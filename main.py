@@ -50,7 +50,11 @@ def main():
 
         #  Mostarar favoritos
         elif (option == 5):
-            show_favorites(favorite)
+            try:
+                show_favorites(favorite)
+            except:
+                print("First Load the favorites")
+
         else:
             show_invalid_input()
 

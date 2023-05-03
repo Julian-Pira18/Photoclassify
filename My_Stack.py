@@ -57,7 +57,8 @@ class Stack:
     def search(self, number, update=None):
 
         ref = self.top
-        while True:
-            if ref.data.data == number:
+        while ref:
+            if ref.data == number:
+                ref.data = update
                 break
             ref = ref.next

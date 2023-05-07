@@ -38,7 +38,8 @@ def show_options() -> int:
         1. PRINT All IDs OF THE PHOTOS
         2. PRINT PROJECT INFO
         3. EXIT OF PROGRAM
-    
+        4. Load FAVORITES
+        5  FAVORITES MENU
 """
     print(Fore.BLUE + text)
     opt = input("\n")

@@ -20,7 +20,7 @@ def show_header():
                \_\/_/\       /_\_\/           
                   \_\/       \_\/       
     
-                   PhotoClassif
+                   PhotoClassify
 
 """
     print(Fore.BLUE + text)
@@ -55,7 +55,7 @@ def show_options() -> int:
 
 def show_project():
     text = """
-    Name: PhotoClassif
+    Name: PhotoClassify
 
     Participants:
                 Julian Pira 

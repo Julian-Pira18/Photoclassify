@@ -63,7 +63,7 @@ def show_project():
                 Anderson Barrera 
                 Camilo Rodriguez
     
-    Ing. Systems and Computing
+    Systems and Computing Engineer
     National university of Colombia
     """
 
